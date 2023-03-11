@@ -9,28 +9,28 @@ class stacks{
     int size ;
 
 
-stacks (int s){
-    this -> size = s;   // Can be (s) or (size)> RHS only
-    arr = new int [s];
+stacks (int r){
+    this -> size = r;   // Can be (r) or (size) >> RHS only
+    arr = new int [r];
     top = -1;
 }
 
 int push (int element){              //? Return type can be >> void / int
-    if(size - top >= 0){             // Stacks index starts from >> 1 <<
-        top ++;
-        arr[top]  = element;
+    if(top == size -1){             // Stacks index starts from >> 1 <<
+        cout<< " Stack overflow"<<endl;
     }
     else{
-        cout<< " Stack overflow"<<endl;
+         top ++;
+        arr[top]  = element;
     }
 }
 
 int pop(){                           //? Return type can be >> void / int
-    if (top > 0){
-        top --;
+    if (top == -1){
+        cout<<"Stack underflow"<< endl;
     }
     else{
-        cout<<"Stack underflow"<< endl;
+        top --;
     }
 }
 
@@ -45,7 +45,7 @@ int pop(){                           //? Return type can be >> void / int
     }
 
 
-};
+};   //     ***ALL OPERATIONS ARE INSIDE CLASS***
 
 
 
@@ -59,7 +59,7 @@ int main()
     cout<<"Original"<<endl;
     cout<<s.peek()<<endl;
 
-    cout<<"After push"<<endl;
+    cout<<"After pop"<<endl;
 
     s.pop();
     cout<<s.peek()<<endl;
@@ -67,4 +67,3 @@ int main()
     
     return 0;
 } 
-
